@@ -13,7 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.leadpony.jsct.everit;
+
+import java.io.IOException;
+import java.util.stream.Stream;
+
+import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
+import org.leadpony.jsct.base.Fixture;
+
 /**
  * @author leadpony
  */
-package org.leadpony.jsct.justify;
+public class Draft06Test extends AbstractConformanceTest {
+
+    public static Stream<Fixture> fixtures() throws IOException {
+        return fromSpec("draft6");
+    }
+
+    @Override
+    protected void configure(SchemaLoaderBuilder builder) {
+        builder.draftV6Support();
+    }
+}

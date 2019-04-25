@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.net.URI;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Logger;
@@ -56,13 +57,30 @@ public abstract class ConformanceTest {
     }
 
     public static InputStream openRemoteResource(URI uri) {
-        String pathPart = uri.getPath().substring(1);
-        Path local = remotePath.resolve(pathPart).normalize();
         try {
-            return Files.newInputStream(local);
+            return doOpenRemoteResource(uri);
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
+    }
+
+    private static InputStream doOpenRemoteResource(URI uri) throws IOException {
+        String host = uri.getHost();
+        if (host.equals("localhost")) {
+            String pathPart = uri.getPath().substring(1);
+            Path local = remotePath.resolve(pathPart).normalize();
+            return Files.newInputStream(local);
+        } else if (host.equals("json-schema.org")) {
+            switch (uri.getPath()) {
+            case "/draft-04/schema":
+                return openResource("/draft-04.json");
+            case "/draft-06/schema":
+                return openResource("/draft-06.json");
+            case "/draft-07/schema":
+                return openResource("/draft-07.json");
+            }
+        }
+        throw new NoSuchFileException(uri.toString());
     }
 
     protected abstract boolean validate(String schemaJson, String dataJson);
@@ -72,5 +90,9 @@ public abstract class ConformanceTest {
             return false;
         }
         return path.getFileName().toString().endsWith(".json");
+    }
+
+    private static InputStream openResource(String name) {
+        return ConformanceTest.class.getResourceAsStream(name);
     }
 }

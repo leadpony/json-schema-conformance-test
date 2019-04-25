@@ -12,6 +12,7 @@
 
     <modules>
         <module>jsct-base</module>
+        <module>jsct-everit-json-schema</module>
         <module>jsct-justify</module>
     </modules>
 
@@ -76,6 +77,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M3</version>
+                    <configuration>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
