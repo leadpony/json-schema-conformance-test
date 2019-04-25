@@ -5,15 +5,15 @@
 
     <parent>
         <groupId>org.leadpony.jsct</groupId>
-        <artifactId>jsct-parent</artifactId>
+        <artifactId>jsct</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>jsct-base</artifactId>
     <packaging>jar</packaging>
 
-    <name>Base Component for Conformance Test</name>
-    
+    <name>Conformance Test Base Component</name>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -27,18 +27,15 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
         </dependency>
-            <dependency>
-                <groupId>javax.json</groupId>
-                <artifactId>javax.json-api</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.json</artifactId>
-                <scope>runtime</scope>
-            </dependency>
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
-
-    <build>
-    </build>
 
 </project>

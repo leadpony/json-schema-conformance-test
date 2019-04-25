@@ -5,24 +5,26 @@
 
     <parent>
         <groupId>org.leadpony.jsct</groupId>
-        <artifactId>jsct-parent</artifactId>
+        <artifactId>jsct</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>jsct-justify</artifactId>
     <packaging>jar</packaging>
 
-    <name>Test with Justify</name>
+    <name>Justify Test</name>
 
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>jsct-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.leadpony.justify</groupId>
             <artifactId>justify</artifactId>
             <version>0.16.0</version>
         </dependency>
     </dependencies>
-
-    <build>
-    </build>
 
 </project>
