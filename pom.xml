@@ -12,8 +12,10 @@
 
     <modules>
         <module>jsct-base</module>
-        <module>jsct-everit-json-schema</module>
+        <module>jsct-everit-validator</module>
+        <module>jsct-fge-validator</module>
         <module>jsct-justify</module>
+        <module>jsct-networknt-validator</module>
     </modules>
 
     <properties>

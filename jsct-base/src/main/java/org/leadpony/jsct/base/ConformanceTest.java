@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
@@ -60,7 +62,17 @@ public abstract class ConformanceTest {
         try {
             return doOpenRemoteResource(uri);
         } catch (IOException e) {
+            log.severe(e.getMessage());
             throw new UncheckedIOException(e);
+        }
+    }
+
+    public static InputStream openRemoteResource(URL url) {
+        try {
+            return openRemoteResource(url.toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
