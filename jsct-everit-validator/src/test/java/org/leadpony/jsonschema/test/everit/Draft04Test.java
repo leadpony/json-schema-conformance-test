@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2019 the Justify authors.
+ * Copyright 2019 the original authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.justify;
+package org.leadpony.jsonschema.test.everit;
 
 import java.io.IOException;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.leadpony.jsct.base.Fixture;
-import org.leadpony.justify.api.SpecVersion;
+import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
+import org.leadpony.jsonschema.test.base.Fixture;
 
 /**
  * @author leadpony
@@ -31,8 +30,7 @@ public class Draft04Test extends AbstractConformanceTest {
         return fromSpec("draft4");
     }
 
-    @BeforeAll
-    public static void setUpOnce() {
-        setUp(SpecVersion.DRAFT_04);
+    @Override
+    protected void configure(SchemaLoaderBuilder builder) {
     }
 }

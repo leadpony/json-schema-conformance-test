@@ -15,6 +15,7 @@
         <module>jsct-everit-validator</module>
         <module>jsct-fge-validator</module>
         <module>jsct-justify</module>
+        <module>jsct-medeia-validator</module>
         <module>jsct-networknt-validator</module>
     </modules>
 

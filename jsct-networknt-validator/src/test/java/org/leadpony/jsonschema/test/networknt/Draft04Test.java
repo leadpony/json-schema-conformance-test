@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.fge;
+package org.leadpony.jsonschema.test.networknt;
 
 import java.io.IOException;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.leadpony.jsct.base.ConformanceTest;
-import org.leadpony.jsct.base.Fixture;
+import org.leadpony.jsonschema.test.base.ConformanceTest;
+import org.leadpony.jsonschema.test.base.Fixture;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.fge.jsonschema.SchemaVersion;
-import com.github.fge.jsonschema.cfg.ValidationConfiguration;
-import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.github.fge.jsonschema.core.report.ProcessingReport;
-import com.github.fge.jsonschema.main.JsonSchemaFactory;
-import com.github.fge.jsonschema.main.JsonValidator;
+import com.networknt.schema.JsonSchema;
+import com.networknt.schema.JsonSchemaFactory;
+import com.networknt.schema.ValidationMessage;
 
 /**
  * @author leadpony
@@ -37,16 +35,12 @@ import com.github.fge.jsonschema.main.JsonValidator;
 public class Draft04Test extends ConformanceTest {
 
     private static ObjectMapper mapper;
-    private static JsonValidator validator;
+    private static JsonSchemaFactory factory;
 
     @BeforeAll
     public static void setUpOnce() {
         mapper = new ObjectMapper();
-
-        validator = JsonSchemaFactory.newBuilder()
-            .setValidationConfiguration(getValidationConfig())
-            .freeze()
-            .getValidator();
+        factory = JsonSchemaFactory.getInstance();
     }
 
     public static Stream<Fixture> fixtures() throws IOException {
@@ -62,16 +56,11 @@ public class Draft04Test extends ConformanceTest {
         }
     }
 
-    private boolean doValidate(String schemaJson, String dataJson) throws IOException, ProcessingException {
+    private boolean doValidate(String schemaJson, String dataJson) throws IOException {
         JsonNode schemaNode = mapper.readTree(schemaJson);
         JsonNode dataNode = mapper.readTree(dataJson);
-        ProcessingReport report = validator.validate(schemaNode, dataNode);
-        return report.isSuccess();
-    }
-
-    private static ValidationConfiguration getValidationConfig() {
-        return ValidationConfiguration.newBuilder()
-                .setDefaultVersion(SchemaVersion.DRAFTV4)
-                .freeze();
+        JsonSchema schema = factory.getSchema(schemaNode);
+        Set<ValidationMessage> errors = schema.validate(dataNode);
+        return errors.isEmpty();
     }
 }

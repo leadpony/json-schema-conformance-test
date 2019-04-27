@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.everit;
+package org.leadpony.jsonschema.test.everit;
 
 import java.io.IOException;
 import java.util.stream.Stream;
 
 import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
-import org.leadpony.jsct.base.Fixture;
+import org.leadpony.jsonschema.test.base.Fixture;
 
 /**
  * @author leadpony

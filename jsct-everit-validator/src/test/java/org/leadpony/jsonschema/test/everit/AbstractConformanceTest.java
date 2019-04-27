@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.everit;
+package org.leadpony.jsonschema.test.everit;
 
 import java.math.BigInteger;
 
@@ -23,7 +23,7 @@ import org.everit.json.schema.loader.SchemaLoader;
 import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.leadpony.jsct.base.ConformanceTest;
+import org.leadpony.jsonschema.test.base.ConformanceTest;
 
 /**
  * @author leadpony

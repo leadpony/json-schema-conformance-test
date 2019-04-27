@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.justify;
+package org.leadpony.jsonschema.test.justify;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +25,7 @@ import java.util.List;
 
 import javax.json.JsonReader;
 
-import org.leadpony.jsct.base.ConformanceTest;
+import org.leadpony.jsonschema.test.base.ConformanceTest;
 import org.leadpony.justify.api.JsonSchema;
 import org.leadpony.justify.api.JsonSchemaReader;
 import org.leadpony.justify.api.JsonSchemaReaderFactory;

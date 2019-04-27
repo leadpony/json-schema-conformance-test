@@ -13,24 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.everit;
+package org.leadpony.jsonschema.test.medeia;
 
 import java.io.IOException;
 import java.util.stream.Stream;
 
-import org.everit.json.schema.loader.SchemaLoader.SchemaLoaderBuilder;
-import org.leadpony.jsct.base.Fixture;
+import org.junit.jupiter.api.BeforeAll;
+import org.leadpony.jsonschema.test.base.Fixture;
+
+import com.worldturner.medeia.api.JsonSchemaVersion;
 
 /**
  * @author leadpony
  */
-public class Draft04Test extends AbstractConformanceTest {
+public class Draft06Test extends AbstractConformanceTest {
 
     public static Stream<Fixture> fixtures() throws IOException {
-        return fromSpec("draft4");
+        return fromSpec("draft6");
     }
 
-    @Override
-    protected void configure(SchemaLoaderBuilder builder) {
+    @BeforeAll
+    public static void setUpOnce() {
+        setUp(JsonSchemaVersion.DRAFT06);
     }
 }

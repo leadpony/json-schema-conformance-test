@@ -13,4 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.leadpony.jsct.base;
+package org.leadpony.jsonschema.test.medeia;
+
+import java.io.IOException;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.leadpony.jsonschema.test.base.Fixture;
+
+import com.worldturner.medeia.api.JsonSchemaVersion;
+
+/**
+ * @author leadpony
+ */
+public class Draft07Test extends AbstractConformanceTest {
+
+    public static Stream<Fixture> fixtures() throws IOException {
+        return fromSpec("draft7");
+    }
+
+    @BeforeAll
+    public static void setUpOnce() {
+        setUp(JsonSchemaVersion.DRAFT07);
+    }
+}
