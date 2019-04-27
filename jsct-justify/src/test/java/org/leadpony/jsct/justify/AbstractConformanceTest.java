@@ -15,8 +15,10 @@
  */
 package org.leadpony.jsct.justify;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,9 +68,15 @@ abstract class AbstractConformanceTest extends ConformanceTest {
     }
 
     private static JsonSchema resolveSchema(URI id) {
-        InputStream in = openRemoteResource(id);
-        try (JsonSchemaReader reader = schemaReaderFactory.createSchemaReader(in)) {
+        try (InputStream in = id.toURL().openStream();
+             JsonSchemaReader reader = schemaReaderFactory.createSchemaReader(in)) {
             return reader.read();
+        } catch (MalformedURLException e) {
+            log.severe(e.getMessage());
+            return null;
+        } catch (IOException e) {
+            log.severe(e.getMessage());
+            return null;
         }
     }
 }

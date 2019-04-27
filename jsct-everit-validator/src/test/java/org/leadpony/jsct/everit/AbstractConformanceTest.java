@@ -16,7 +16,6 @@
 package org.leadpony.jsct.everit;
 
 import java.math.BigInteger;
-import java.net.URI;
 
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.ValidationException;
@@ -48,7 +47,6 @@ abstract class AbstractConformanceTest extends ConformanceTest {
         configure(builder);
         SchemaLoader loader = builder
                 .schemaJson(toJson(json))
-                .schemaClient(url->openRemoteResource(URI.create(url)))
                 .build();
         return loader.load().build();
     }

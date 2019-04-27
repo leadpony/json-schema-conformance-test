@@ -16,8 +16,6 @@
 package org.leadpony.jsct.networknt;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -30,7 +28,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchema;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.ValidationMessage;
-import com.networknt.schema.url.URLFetcher;
 
 /**
  * @author leadpony
@@ -43,14 +40,7 @@ public class Draft04Test extends ConformanceTest {
     @BeforeAll
     public static void setUpOnce() {
         mapper = new ObjectMapper();
-        factory = JsonSchemaFactory.builder(JsonSchemaFactory.getInstance())
-                .urlFetcher(new URLFetcher() {
-                    @Override
-                    public InputStream fetch(URL url) throws IOException {
-                        return openRemoteResource(url);
-                    }
-                })
-                .build();
+        factory = JsonSchemaFactory.getInstance();
     }
 
     public static Stream<Fixture> fixtures() throws IOException {
