@@ -11,7 +11,7 @@ The following table shows the number of failures occurred while testing popular 
 | [everit-org/json-schema] | 1.11.1 | 21 | 8 | 9 |
 | [java-json-tools/json-schema-validator] | 2.2.10 | n/a | n/a | 11 |
 | [Justify] | 0.16.0 | 0 | 0 | 0 |
-| [networknt/json-schema-validator] | 1.0.6 | n/a | n/a | 24 |
+| [networknt/json-schema-validator] | 1.0.7 | n/a | n/a | 24 |
 
 Note that _n/a_ in the table means that the software does not support the version of the specification.
 
