@@ -1,10 +1,12 @@
 # JSON Schema Conformance Test
 
+[![Build Status](https://travis-ci.org/leadpony/json-schema-conformance-test.svg?branch=master)](https://travis-ci.org/leadpony/json-schema-conformance-test)
+
 This project provides conformance tests to the [JSON Schema Specification]. All test cases are from official [JSON Schema Test Suite], including both mandatory and optional ones.
 
 ## Test Results
 
-The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2019-04-26.
+The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2019-05-18.
 
 | Software | Version | Draft-07 | Draft-06 | Draft-04 |
 | --- | --- | ---: | ---: | ---: |
@@ -17,12 +19,14 @@ Note that _n/a_ in the table means that the software does not support the versio
 
 ## How to Run
 
-The following tools are required to build this software.
+The following tools are required to build and run this software.
 * JDK 8 or higher
 * Maven 3.6.0
 
 The command below will build and run all tests.
-```
+```bash
+$ git clone --recursive https://github.com/leadpony/json-schema-conformance-test.git
+$ cd json-schema-conformance-test/
 $ mvn clean test
 ```
 
