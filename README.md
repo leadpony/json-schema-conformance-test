@@ -6,14 +6,14 @@ This project provides conformance tests to the [JSON Schema Specification]. All 
 
 ## Test Results
 
-The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2019-06-09.
+The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2019-06-10.
 
 | Software | Version | Draft-07 | Draft-06 | Draft-04 |
 | --- | --- | ---: | ---: | ---: |
 | [everit-org/json-schema] | 1.11.1 | 21 | 8 | 9 |
 | [java-json-tools/json-schema-validator] | 2.2.10 | n/a | n/a | 11 |
 | [Justify] | 0.17.0 | 0 | 0 | 0 |
-| [networknt/json-schema-validator] | 1.0.12 | n/a | n/a | 39 |
+| [networknt/json-schema-validator] | 1.0.14 | n/a | n/a | 35 |
 
 Note that _n/a_ in the table means that the software does not support the version of the specification.
 
