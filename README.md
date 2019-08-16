@@ -10,10 +10,10 @@ The following table shows the number of failures occurred while testing popular 
 
 | Software | Version | Draft-07 | Draft-06 | Draft-04 |
 | --- | --- | ---: | ---: | ---: |
-| [everit-org/json-schema] | 1.11.1 | 23 | 10 | 11 |
+| [everit-org/json-schema] | 1.11.1 | 27 | 14 | 13 |
 | [java-json-tools/json-schema-validator] | 2.2.10 | n/a | n/a | 17 |
-| [Justify] | 1.0.0 | 0 | 0 | 0 |
-| [networknt/json-schema-validator] | 1.0.16 | n/a | n/a | 41 |
+| [Justify] | 1.1.0 | 0 | 0 | 0 |
+| [networknt/json-schema-validator] | 1.0.19 | n/a | n/a | 43 |
 
 Note that _n/a_ in the table means that the software does not support the version of the specification.
 
