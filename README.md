@@ -6,7 +6,7 @@ This project provides conformance tests to the [JSON Schema Specification]. All 
 
 ## Test Results
 
-The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2019-08-16.
+The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2020-05-11.
 
 | Software | Version | Draft-07 | Draft-06 | Draft-04 |
 | --- | --- | ---: | ---: | ---: |
