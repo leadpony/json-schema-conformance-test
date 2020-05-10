@@ -33,7 +33,7 @@ import com.networknt.schema.SpecVersion;
 /**
  * @author leadpony
  */
-public class Draft04Test extends ConformanceTest {
+public class Draft06Test extends ConformanceTest {
 
     private static ObjectMapper mapper;
     private static JsonSchemaFactory factory;
@@ -41,11 +41,11 @@ public class Draft04Test extends ConformanceTest {
     @BeforeAll
     public static void setUpOnce() {
         mapper = new ObjectMapper();
-        factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
+        factory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V6);
     }
 
     public static Stream<Fixture> fixtures() throws IOException {
-        return fromSpec("draft4");
+        return fromSpec("draft6");
     }
 
     @Override

@@ -23,7 +23,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.json.JsonReader;
+import jakarta.json.JsonReader;
 
 import org.leadpony.jsonschema.test.base.ConformanceTest;
 import org.leadpony.justify.api.JsonSchema;
