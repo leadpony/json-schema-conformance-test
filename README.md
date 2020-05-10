@@ -14,7 +14,7 @@ The following table shows the number of failures occurred while testing popular 
 | [java-json-tools/json-schema-validator] | 2.2.13 | n/a | n/a | 17 |
 | [Justify] | 3.0.0-RC1 | 0 | 0 | 0 |
 | [networknt/json-schema-validator] | 1.0.39 | 52 | 35 | 17 |
-| [worldturner/medeia-validator] | 1.1.1 | 31 | 29 | 29 |
+| [worldturner/medeia-validator](https://github.com/worldturner/medeia-validator) | 1.1.1 | 31 | 29 | 29 |
 
 Note that _n/a_ in the table means that the software does not support the version of the specification.
 
