@@ -6,14 +6,15 @@ This project provides conformance tests to the [JSON Schema Specification]. All 
 
 ## Test Results
 
-The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2020-05-12.
+The following table shows the number of failures occurred while testing popular JSON validators written in JVM languages as of 2020-10-25.
 
-| Software | Version | Draft-07 | Draft-06 | Draft-04 |
-| --- | --- | ---: | ---: | ---: |
-| [everit-org/json-schema] | 1.12.1 | 32 | 19 | 16 |
-| [java-json-tools/json-schema-validator] | 2.2.13 | n/a | n/a | 22 |
-| [Justify] | 3.0.0-RC2 | 0 | 0 | 0 |
-| [networknt/json-schema-validator] | 1.0.39 | 55 | 37 | 19 |
+| Software | Version | Draft 2019-09 | Draft-07 | Draft-06 | Draft-04 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| [everit-org/json-schema] | 1.12.1 | n/a | 32 | 19 | 16 |
+| [java-json-tools/json-schema-validator] | 2.2.13 | n/a | n/a | n/a | 22 |
+| [Justify] | 3.0.0-RC2 | n/a | 0 | 0 | 0 |
+| [networknt/json-schema-validator] | 1.0.39 | n/a | 55 | 37 | 19 |
+| [ssilverman/snowy-json] | 0.15.0 | 2 | 2 | 2 | n/a |
 
 Note that _n/a_ in the table means that the software does not support the version of the specification.
 
@@ -41,3 +42,4 @@ Copyright &copy; 2019-2020 leadpony. This software is licensed under [Apache Lic
 [java-json-tools/json-schema-validator]: https://github.com/java-json-tools/json-schema-validator
 [Justify]: https://github.com/leadpony/justify
 [networknt/json-schema-validator]: https://github.com/networknt/json-schema-validator
+[ssilverman/snowy-json]: https://github.com/ssilverman/snowy-json
