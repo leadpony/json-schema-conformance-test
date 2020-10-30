@@ -17,6 +17,7 @@
         <module>jsct-justify</module>
         <module>jsct-medeia-validator</module>
         <module>jsct-networknt-validator</module>
+        <module>jsct-snow-validator</module>
     </modules>
 
     <properties>
