@@ -21,7 +21,7 @@ Note that _n/a_ in the table means that the software does not support the versio
 ## How to Run
 
 The following tools are required to build and run this software.
-* JDK 8 or higher
+* JDK 11 or higher
 * Maven 3.6.0
 
 The command below will build and run all tests.
