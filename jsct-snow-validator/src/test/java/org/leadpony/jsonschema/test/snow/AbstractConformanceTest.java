@@ -39,8 +39,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Shawn Silverman (shawn@pobox.com)
  */
 abstract class AbstractConformanceTest extends ConformanceTest {
-    private static Map<com.qindesign.net.URI, JsonElement> knownIDs;
-    private static Map<com.qindesign.net.URI, URL> knownURLs;
+    private static Map<com.qindesign.json.schema.net.URI, JsonElement> knownIDs;
+    private static Map<com.qindesign.json.schema.net.URI, URL> knownURLs;
     private static Options options;
 
     private static final AtomicInteger testNum = new AtomicInteger(0);
@@ -48,7 +48,7 @@ abstract class AbstractConformanceTest extends ConformanceTest {
     static void setUp(Specification spec) throws IOException {
         knownIDs = Collections.emptyMap();
         knownURLs = new HashMap<>();
-        knownURLs.put(com.qindesign.net.URI.parseUnchecked("http://localhost:1234"),
+        knownURLs.put(com.qindesign.json.schema.net.URI.parseUnchecked("http://localhost:1234"),
                       new URL("http://localhost:1234/"));
 
         options = new Options();
@@ -66,7 +66,8 @@ abstract class AbstractConformanceTest extends ConformanceTest {
             // access to the file URI here
             Validator validator = new Validator(
                 testSchema,
-                com.qindesign.net.URI.parseUnchecked("urn:jsct-test:" + testNum.incrementAndGet()),
+                com.qindesign.json.schema.net.URI.parseUnchecked(
+                    "urn:jsct-test:" + testNum.incrementAndGet()),
                 knownIDs, knownURLs, options);
             Map<JSONPath, Map<String, Map<JSONPath, Annotation<?>>>> annotations = new HashMap<>();
             Map<JSONPath, Map<JSONPath, Error<?>>> errors = new HashMap<>();
