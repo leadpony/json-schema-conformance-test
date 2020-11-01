@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 the original authors.
+ * Copyright 2019, 2020 the original authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,12 @@ public abstract class ConformanceTest {
     @MethodSource("fixtures")
     public void test(Fixture fixture) {
         boolean result = validate(fixture.getSchema(), fixture.getData());
-        assertThat(result).isEqualTo(fixture.isValid());
+        try {
+            assertThat(result).isEqualTo(fixture.isValid());
+        } catch (AssertionError e) {
+            log.info("FAILURE: " + fixture);
+            throw e;
+        }
     }
 
     protected abstract boolean validate(String schemaJson, String dataJson);
